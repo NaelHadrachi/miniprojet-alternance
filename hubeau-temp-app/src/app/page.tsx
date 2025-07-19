@@ -14,7 +14,7 @@ export default function Home() {
     if (department) {
       setLoading(true);
       axios
-        .get(`http://localhost:4000/api/stations?department=${department}`)
+        .get(` https://miniprojet-alternance.onrender.com/api/stations?department=${department}`)
         .then(res => setStations(res.data))
         .catch(() => alert("Erreur lors du chargement des stations"))
         .finally(() => setLoading(false));

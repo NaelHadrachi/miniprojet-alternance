@@ -7,7 +7,7 @@ export default function StationTable({ stations }: { stations: any[] }) {
 
   useEffect(() => {
     stations.forEach((station) => {
-      axios.get(`http://localhost:4000/api/latest-temperature?stationCode=${station.code_station}`)
+      axios.get(` https://miniprojet-alternance.onrender.com/api/latest-temperature?stationCode=${station.code_station}`)
         .then(res => setLatestTemps((prev: any) => ({ ...prev, [station.code_station]: res.data })))
         .catch(() => console.log("Erreur température"));
     });
